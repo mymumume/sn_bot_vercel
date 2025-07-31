@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "sn-bot-vercel",
   "builds": [
     {
       "src": "api/webhook.py",
@@ -9,11 +8,16 @@
   ],
   "routes": [
     {
+      "src": "/api/webhook",
+      "dest": "/api/webhook.py"
+    },
+    {
+      "src": "/api/test",
+      "dest": "/api/test.py"
+    },
+    {
       "src": "/(.*)",
       "dest": "/api/webhook.py"
     }
-  ],
-  "env": {
-    "PYTHONPATH": "."
-  }
+  ]
 } 
